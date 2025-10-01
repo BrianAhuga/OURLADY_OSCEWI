@@ -14,9 +14,9 @@ namespace APIServices
 
         public async Task<ServiceResponse> SendMail(Mail mail)
         {
-            SmtpClient smtpClient = new("mailer.naihost.com")
+            SmtpClient smtpClient = new("mail.ourladyps.org")
             {
-                Port = 465, // SMTP port (25 for non-SSL)
+                Port = 587, // SMTP port (25 for non-SSL)
                 Credentials = new NetworkCredential(mail.From, mail.FromPassword),
                 EnableSsl = false, // Do not use SSL
 

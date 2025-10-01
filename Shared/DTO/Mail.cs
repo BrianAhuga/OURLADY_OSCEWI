@@ -3,10 +3,10 @@
     public class Mail
     {
         public string To { get; set; }
-        public string From { get; set; } = "no-reply@geomaticstechnics.co.ke";
-        public string FromPassword { get; set; } = "Passw0rd@123";
+        public string From { get; set; } = "no-reply@ourladyps.org";
+        public string FromPassword { get; set; } = "Lady@2020?";
         public string Subject { get; set; }
-        public string SenderName { get; set; } = "Geomatics Technics";
+        public string SenderName { get; set; } = "Our Lady Parents' School - Luweero";
         public string? RecipientName { get; set; }
         public string? Message { get; set; }
     }

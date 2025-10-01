@@ -9,6 +9,11 @@ namespace OurLadyPS.Web.Pages
     {
         private MailService mailservice;
 
+        public ContactModel(MailService _mailService)
+        {
+            mailservice = _mailService;
+        }
+
         public void OnGet()
         {
         }
@@ -25,13 +30,13 @@ namespace OurLadyPS.Web.Pages
                     Subject = "Message Received",
                     Message = $@"
                         <div style='font-family:Segoe UI, sans-serif; padding:20px; border:1px solid #e0e0e0; border-radius:8px; max-width:600px; margin:auto; background-color:#f9f9f9;'>
-                            <h2 style='color:#0c75bc;'>Hi {form.Name},</h2>
-                            <p style='font-size:16px; color:#333;'>Thank you for reaching out to <strong>Geomatics Technics</strong>. We’ve received your message and our team will get back to you as soon as possible.</p>
+                            <h2 style='color:#0c75bc;'>Hello {form.Name},</h2>
+                            <p style='font-size:16px; color:#333;'>Thank you for reaching out to <strong>Our Lady Parents' School - Luweero</strong>. We’ve received your message and our team will get back to you as soon as possible.</p>
                             <p style='font-size:16px; color:#333;'>Meanwhile, feel free to explore more on our website or reach us directly using the contact information below.</p>
                             <hr style='margin:20px 0; border:none; border-top:1px solid #ddd;' />
                             <p style='font-size:14px; color:#555;'>With appreciation,</p>
-                            <p style='font-size:14px; color:#0c75bc; font-weight:bold;'>Email:  info@geomaticstechnics.com</p>
-                            <p style='font-size:14px; color:#0c75bc; font-weight:bold;'>Phone:  +254(0)780 322 348</p>
+                            <p style='font-size:14px; color:#0c75bc; font-weight:bold;'>Email:  info@ourladyps.org</p>
+                            <p style='font-size:14px; color:#0c75bc; font-weight:bold;'>Phone:  +256(0)772 450 346</p>
                         </div>"
                 };
 
@@ -51,7 +56,7 @@ namespace OurLadyPS.Web.Pages
                             <p style='font-size:15px; color:#444; white-space:pre-line;'>{form.Message}</p>
                         </div>
                         <hr style='margin:20px 0; border:none; border-top:1px solid #ddd;' />
-                        <footer style='font-size:12px; color:#999;'>This message was sent from the official <strong>Geomatics Technics</strong> website contact form.</footer>
+                        <footer style='font-size:12px; color:#999;'>This message was sent from the official <strong>Our Lady Parents' School - Luweero</strong> website contact form.</footer>
                     </div>"
                     ;
 
@@ -63,7 +68,6 @@ namespace OurLadyPS.Web.Pages
             {
                 return new JsonResult(new { success = false, message = ex.Message });
             }
-
         }
     }
 }
