@@ -4,7 +4,8 @@
     ViewData["Title"] = "Vacancies";
 }
 
-
+<!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
 <!-- Page Title -->
 <div class="page-title dark-background" style="background-image: url(assets/img/education/showcase-1.webp);">
@@ -37,59 +38,93 @@
 
         <h3>Job Application Form</h3>
         <hr />
-        <form class="row g-3 mt-2">
-            <div class="col-md-6">
-                <label for="inputFullName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="inputFullName" required>
-            </div>
 
+        <!-- Your Form -->
+        <form id="jobApplicationForm" class="row g-3 mt-2" method="post" enctype="multipart/form-data">
             <div class="col-md-6">
-                <label for="inputEmail" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="inputEmail" required>
+                <label for="FullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="FullName" name="FullName" required>
             </div>
 
             <div class="col-md-6">
-                <label for="inputPhoneNumber" class="form-label">Phone Number</label>
-                <input type="number" class="form-control" id="inputPhoneNumber" min="10" max="12" required>
+                <label for="Email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="Email" name="Email" required>
             </div>
 
             <div class="col-md-6">
-                <label for="inputPosition" class="form-label">Position Applying for</label>
-                <input type="text" class="form-control" id="inputPosition" required>
+                <label for="PhoneNumber" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="PhoneNumber" name="PhoneNumber"
+                       pattern="[0-9+]{10,15}" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="Position" class="form-label">Position Applying for</label>
+                <input type="text" class="form-control" id="Position" name="Position" required>
             </div>
 
             <div class="col-md-3">
-                <label for="coverletter" class="form-label">Cover Letter</label>
-                <input class="form-control" type="file" id="coverletter" accept=".pdf, .doc, .docx">
+                <label for="CoverLetter" class="form-label">Cover Letter</label>
+                <input class="form-control" type="file" id="CoverLetter" name="CoverLetter" accept=".pdf,.doc,.docx">
             </div>
 
             <div class="col-md-3">
-                <label for="cv" class="form-label">CV & References</label>
-                <input class="form-control" type="file" id="cv" accept=".pdf, .doc, .docx">
+                <label for="CV" class="form-label">CV & References</label>
+                <input class="form-control" type="file" id="CV" name="CV" accept=".pdf,.doc,.docx">
             </div>
 
             <div class="col-md-3">
-                <label for="idpassport" class="form-label">ID/Passport</label>
-                <input class="form-control" type="file" id="idpassport" accept="jpg, png, jpeg">
+                <label for="IDPassport" class="form-label">ID/Passport</label>
+                <input class="form-control" type="file" id="IDPassport" name="IDPassport" accept=".jpg,.jpeg,.png">
             </div>
 
             <div class="col-md-3">
-                <label for="academicdocs" class="form-label">Academic Documents</label>
-                <input class="form-control" type="file" id="academicdocs" accept=".pdf, .doc, .docx">
+                <label for="AcademicDocs" class="form-label">Academic Documents</label>
+                <input class="form-control" type="file" id="AcademicDocs" name="AcademicDocs" accept=".pdf,.doc,.docx">
             </div>
 
             <div class="col-md-12">
-                <label for="inputPosition" class="form-label">
-                    Tell us about yourself and the job you are interested in. 
+                <label for="About" class="form-label">
+                    Tell us about yourself and the job you are interested in.
                 </label>
-                <textarea class="form-control" id="childrenText" rows="5" placeholder="Enter details here..."></textarea>
+                <textarea class="form-control" id="About" name="About" rows="5" placeholder="Enter details here..."></textarea>
             </div>
-           
+
             <div class="col-12">
-                <button type="submit" class="btn btn-danger">Submit Form</button>
+                <button id="submitBtn" type="submit" class="btn btn-danger">
+                    <span id="btnSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                    <span id="btnText">Submit Form</span>
+                </button>
             </div>
         </form>
     </div>
 
 </section>
 
+@section Scripts {
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        document.getElementById('jobApplicationForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // prevent default form submission
+
+            Swal.fire({
+                title: 'Submit Application?',
+                text: "Please confirm you want to submit this job application.",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Submit!',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Show spinner and disable button
+                    document.getElementById('btnSpinner').classList.remove('d-none');
+                    document.getElementById('btnText').innerText = "Submitting...";
+                    document.getElementById('submitBtn').disabled = true;
+
+                    this.submit(); // proceed with form submission
+                }
+            });
+        });
+    </script>
+}

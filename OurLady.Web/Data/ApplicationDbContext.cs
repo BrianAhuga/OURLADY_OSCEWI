@@ -10,5 +10,7 @@ namespace OurLady.Web.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<JobApplication> JobApplications { get; set; }
+
     }
 }
