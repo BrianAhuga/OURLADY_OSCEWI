@@ -1,6 +1,6 @@
 using APIServices;
 using Microsoft.EntityFrameworkCore;
-using OurLady.Web.Data;
+using Shared.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +10,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<MailService>();
+builder.Services.AddScoped<IJobApplicationService, JobApplicationService>();
+
 
 
 var app = builder.Build();
