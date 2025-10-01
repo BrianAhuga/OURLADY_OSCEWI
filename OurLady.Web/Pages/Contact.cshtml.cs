@@ -29,15 +29,46 @@ namespace OurLadyPS.Web.Pages
                     To = form.Email,
                     Subject = "Message Received",
                     Message = $@"
-                        <div style='font-family:Segoe UI, sans-serif; padding:20px; border:1px solid #e0e0e0; border-radius:8px; max-width:600px; margin:auto; background-color:#f9f9f9;'>
-                            <h2 style='color:#0c75bc;'>Hello {form.Name},</h2>
-                            <p style='font-size:16px; color:#333;'>Thank you for reaching out to <strong>Our Lady Parents' School - Luweero</strong>. We’ve received your message and our team will get back to you as soon as possible.</p>
-                            <p style='font-size:16px; color:#333;'>Meanwhile, feel free to explore more on our website or reach us directly using the contact information below.</p>
-                            <hr style='margin:20px 0; border:none; border-top:1px solid #ddd;' />
-                            <p style='font-size:14px; color:#555;'>With appreciation,</p>
-                            <p style='font-size:14px; color:#0c75bc; font-weight:bold;'>Email:  info@ourladyps.org</p>
-                            <p style='font-size:14px; color:#0c75bc; font-weight:bold;'>Phone:  +256(0)772 450 346</p>
-                        </div>"
+                        <div style=""font-family:Segoe UI, sans-serif; padding:30px; border:1px solid #e0e0e0; border-radius:12px; max-width:650px; margin:auto; background-color:#ffffff; box-shadow:0 4px 12px rgba(0,0,0,0.08);"">
+    
+                        <!-- Logo Header -->
+                        <div style=""text-align:center; margin-bottom:25px;"">
+                            <!-- <img src=""~/assets/img/ourlay-parents-school-logo.png"" alt=""Our Lady Parents' School Logo"" style=""max-height:90px; margin-bottom:10px;"" /> -->
+                            <h1 style=""color:#0c75bc; font-size:22px; margin:0;"">Our Lady Parents' School - Luweero</h1>
+                            <p style=""color:#777; font-size:14px; margin-top:5px;"">Day & Boarding School</p>
+                        </div>
+
+                        <!-- Greeting -->
+                        <h2 style=""color:#0c75bc; font-size:20px; margin-bottom:15px;"">Hello {form.Name},</h2>
+
+                        <!-- Main Message -->
+                        <p style=""font-size:16px; color:#333; line-height:1.6; margin-bottom:15px;"">
+                            Thank you for reaching out to <strong>Our Lady Parents' School - Luweero</strong>.  
+                            We’ve received your message and our team will get back to you as soon as possible.
+                        </p>
+
+                        <p style=""font-size:16px; color:#333; line-height:1.6; margin-bottom:25px;"">
+                            Meanwhile, feel free to explore more on our website or reach us directly using the contact information below.
+                        </p>
+
+                        <!-- Divider -->
+                        <hr style=""margin:20px 0; border:none; border-top:2px solid #0c75bc;"" />
+
+                        <!-- Signature -->
+                        <p style=""font-size:15px; color:#555; margin-bottom:10px;"">With appreciation,</p>
+                        <p style=""font-size:15px; color:#0c75bc; font-weight:bold; margin:0;"">Our Lady Parents' School</p>
+
+                        <!-- Contact Info -->
+                        <div style=""background:#f9f9f9; border:1px solid #e0e0e0; border-radius:8px; padding:15px; margin-top:20px;"">
+
+                            <p style='font-size:14px; color:black; font-weight:bold;'>Email: info@ourladyps.org</p>
+                            <p style='font-size:14px; color:black; font-weight:bold;'>Phone: +256 (0)772 450 346</p>
+                            <p style='font-size:14px; color:black; font-weight:bold;'>Website: 
+                            <a href=""https://ourladyps.org"" style=""color:#0c75bc; text-decoration:none;"">www.ourladyps.org</a>
+                            </p>
+                        </div>
+                    </div>
+                    "
                 };
 
                 mailservice.SendMail(mail);
@@ -47,9 +78,9 @@ namespace OurLadyPS.Web.Pages
                 mail.RecipientName = "Our Lady Parents' School Day and Boarding School - Luweero";
                 mail.Subject = form.Subject;
                 mail.Message = $@"
-                    <div style='font-family:Segoe UI, sans-serif; padding:20px; border:1px solid #e0e0e0; border-radius:8px; max-width:600px; margin:auto; background-color:#fffbe6;'>
+                    <div style='font-family:Segoe UI, sans-serif; padding:20px; border:1px solid #e0e0e0; border-radius:8px; max-width:600px; margin:auto; background-color:white-smoke;'>
                         <h2 style='color:#0c75bc;'>New Message from Website</h2>
-                        <p style='font-size:16px; color:#333;'><strong>Name:</strong> {form.Name}</p>
+                        <p style='font-size:16px; color:#333;'><strong>From:</strong> {form.Name}</p>
                         <p style='font-size:16px; color:#333;'><strong>Email:</strong> {form.Email}</p>
                         <p style='font-size:16px; color:#333;'><strong>Subject:</strong> {form.Subject}</p>
                         <div style='margin-top:20px; padding:15px; background-color:#f4f4f4; border-left:4px solid #0c75bc;'>
