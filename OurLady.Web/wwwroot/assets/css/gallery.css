@@ -1,0 +1,23 @@
+﻿.stack-img {
+    @apply absolute inset-0 w-full h-full object-cover rounded-xl shadow-lg transition-transform duration-500;
+}
+
+.photo-stack img:nth-child(1) {
+    transform: rotate(-5deg) translate(-10px, -10px);
+    z-index: 1;
+}
+
+.photo-stack img:nth-child(2) {
+    transform: rotate(3deg) translate(10px, -5px);
+    z-index: 2;
+}
+
+.photo-stack img:nth-child(3) {
+    transform: rotate(-2deg) translate(-5px, 10px);
+    z-index: 3;
+}
+
+.photo-stack img:nth-child(4) {
+    transform: rotate(4deg) translate(5px, 15px);
+    z-index: 4;
+}

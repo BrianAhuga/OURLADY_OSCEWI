@@ -1,0 +1,182 @@
+﻿@page "/Contact"
+@model OurLadyPS.Web.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+
+<div class="page-title dark-background" style="background-image: url(assets/img/aboutpage/classroom.jpg);">
+    <div class="container position-relative">
+        <h1>Contact</h1>
+        <p>Want to consult with one of our experts? Contact us using the method that's most convenient for you. </p>
+        <nav class="breadcrumbs">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li class="current">Contact</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<section id="contact" class="contact section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Contact Info Boxes -->
+        <div class="row gy-4 mb-5">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-info-box">
+                    <div class="icon-box">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Our Address</h4>
+                        <p>Luweero District, Kasoma Zone - Uganda</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-info-box">
+                    <div class="icon-box">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Email Address</h4>
+                        <p>info@ourladyps.org</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="contact-info-box">
+                    <div class="icon-box">
+                        <i class="bi bi-telephone"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Call</h4>
+                        <p>+256 772 450 346</p>
+                        <p>+256 701 450 346</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Google Maps (Full Width) -->
+    <div class="map-section" data-aos="fade-up" data-aos-delay="200">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.6941076349738!2d32.486862692964294!3d0.8413026449102022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177c643450c5f3f1%3A0x5a0cc24f637f5462!2sOur%20Lady%20parents%20school!5e0!3m2!1sen!2sjp!4v1756653645007!5m2!1sen!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Contact Form Section (Overlapping) -->
+    <div class="container form-container-overlap">
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-10">
+                <div class="contact-form-wrapper">
+                    <h2 class="text-center mb-4">Get in Touch</h2>
+
+                    <form id="contactForm" method="post" asp-page-handler="SendMessage">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-with-icon">
+                                        <i class="bi bi-person"></i>
+                                        <input type="text" class="form-control" name="name" placeholder="First Name" required="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-with-icon">
+                                        <i class="bi bi-envelope"></i>
+                                        <input type="email" class="form-control" name="email" placeholder="Email Address" required="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input-with-icon">
+                                        <i class="bi bi-text-left"></i>
+                                        <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="input-with-icon">
+                                        <i class="bi bi-chat-dots message-icon"></i>
+                                        <textarea class="form-control" name="message" placeholder="Write Message..." style="height: 180px" required=""></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-submit" id="sendBtn">
+                                    <span class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="true" id="spinner"></span>
+                                    Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+@section Scripts{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const formData = new FormData(form);
+            const spinner = document.getElementById('spinner');
+            const sendBtn = document.getElementById('sendBtn');
+
+            spinner.classList.remove('d-none');
+            sendBtn.disabled = true;
+
+            fetch('?handler=SendMessage', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Message Sent!',
+                        text: 'Thank you for reaching out. We’ll be in touch!',
+                        confirmButtonColor: '#007bff'
+                    });
+                    form.reset();
+                } else {
+                    throw new Error(result.message || 'Something went wrong.');
+                }
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops!',
+                    text: error.message,
+                    confirmButtonColor: '#dc3545'
+                });
+            })
+            .finally(() => {
+                spinner.classList.add('d-none');
+                sendBtn.disabled = false;
+            });
+        });
+    </script>
+}

@@ -1,0 +1,154 @@
+﻿@page "/Gallery"
+@model OurLadyPS.Web.Pages.GalleryModel
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    .stack img {
+        position: absolute;
+        transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+        .stack img:nth-child(1) {
+            transform: rotate(-8deg) translateX(-15px);
+            z-index: 1;
+        }
+
+        .stack img:nth-child(2) {
+            transform: rotate(-4deg) translateX(-8px);
+            z-index: 2;
+        }
+
+        .stack img:nth-child(3) {
+            transform: rotate(0deg);
+            z-index: 3;
+        }
+
+        .stack img:nth-child(4) {
+            transform: rotate(4deg) translateX(8px);
+            z-index: 2;
+        }
+
+        .stack img:nth-child(5) {
+            transform: rotate(8deg) translateX(15px);
+            z-index: 1;
+        }
+</style>
+
+<div class="page-title dark-background" style="background-image: url(assets/img/education/showcase-1.webp);">
+    <div class="container position-relative">
+        <h1>Gallery</h1>
+        <p>Go down memory lane of our previ</p>
+        <nav class="breadcrumbs">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li class="current">Gallery</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+
+<section id="starter-section" class="starter-section section">
+    <div class="container mx-auto p-8" data-aos="fade-up">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- Category Card -->
+            <div class="bg-white-500 p-6 rounded-2xl shadow-lg text-center flex flex-col items-center">
+                <div class="relative w-48 h-48 mb-4 stack" id="stack-0">
+                    <img src="~/assets/img/Gallery/schoolprayer/1.jpg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                    <img src="~/assets/img/Gallery/schoolprayer/2.jpg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                    <img src="~/assets/img/Gallery/schoolprayer/3.jpg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                    <img src="~/assets/img/Gallery/schoolprayer/4.jpg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                    <img src="~/assets/img/Gallery/schoolprayer/5.jpg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                    <img src="~/assets/img/Gallery/schoolprayer/6.jpg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                    <img src="~/assets/img/Gallery/schoolprayer/7.jpg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                </div>
+                <h2 class="text-lg font-bold mb-2">School Prayer</h2>
+                <p class="text-sm text-black-300 mb-4">School prayers offered by the Cathedral in Luweero.</p>
+                <div class="flex space-x-4">
+                    <button onclick="prevStack(0)" class="p-2 bg-red-400 rounded-full hover:bg-blue-300">&larr;</button>
+                    <button onclick="nextStack(0)" class="p-2 bg-red-400 rounded-full hover:bg-blue-300">&rarr;</button>
+                </div>
+            </div>
+
+            <!-- You can duplicate for other categories -->
+            <div class="bg-white-500 p-6 rounded-2xl shadow-lg text-center flex flex-col items-center">
+                <div class="relative w-48 h-48 mb-4 stack" id="stack-1">
+                    <img src="https://images.pexels.com/photos/1535437/pexels-photo-1535437.jpeg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                    <img src="https://images.pexels.com/photos/259269/pexels-photo-259269.jpeg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                    <img src="https://images.pexels.com/photos/1866654/pexels-photo-1866654.jpeg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                </div>
+                <h2 class="text-lg font-bold mb-2">Learning</h2>
+                <p class="text-sm text-black-300 mb-4">Children reading books, learning, and exploring knowledge.</p>
+                <div class="flex space-x-4">
+                    <button onclick="prevStack(1)" class="p-2 bg-red-400 rounded-full hover:bg-blue-300">&larr;</button>
+                    <button onclick="nextStack(1)" class="p-2 bg-red-400 rounded-full hover:bg-blue-300">&rarr;</button>
+                </div>
+            </div>
+
+            <div class="bg-white-500 p-6 rounded-2xl shadow-lg text-center flex flex-col items-center">
+                <div class="relative w-48 h-48 mb-4 stack" id="stack-2">
+                    <img src="https://images.pexels.com/photos/34060969/pexels-photo-34060969.jpeg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                    <img src="https://images.pexels.com/photos/259269/pexels-photo-259269.jpeg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                    <img src="https://images.pexels.com/photos/1535437/pexels-photo-1535437.jpeg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                </div>
+                <h2 class="text-lg font-bold mb-2">Adventure</h2>
+                <p class="text-sm text-black-300 mb-4">Children on an adventure.</p>
+                <div class="flex space-x-4">
+                    <button onclick="prevStack(2)" class="p-2 bg-red-400 rounded-full hover:bg-blue-300">&larr;</button>
+                    <button onclick="nextStack(2)" class="p-2 bg-red-400 rounded-full hover:bg-blue-300">&rarr;</button>
+                </div>
+            </div>
+
+            <div class="bg-white-500 p-6 rounded-2xl shadow-lg text-center flex flex-col items-center">
+                <div class="relative w-48 h-48 mb-4 stack" id="stack-3">
+                    <img src="https://images.pexels.com/photos/34060969/pexels-photo-34060969.jpeg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                    <img src="https://images.pexels.com/photos/259269/pexels-photo-259269.jpeg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                    <img src="https://images.pexels.com/photos/1535437/pexels-photo-1535437.jpeg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                </div>
+                <h2 class="text-lg font-bold mb-2">Education</h2>
+                <p class="text-sm text-black-300 mb-4">Children on an adventure.</p>
+                <div class="flex space-x-4">
+                    <button onclick="prevStack(3)" class="p-2 bg-red-400 rounded-full hover:bg-blue-300">&larr;</button>
+                    <button onclick="nextStack(3)" class="p-2 bg-red-400 rounded-full hover:bg-blue-300">&rarr;</button>
+                </div>
+            </div>
+
+            <div class="bg-white-500 p-6 rounded-2xl shadow-lg text-center flex flex-col items-center">
+                <div class="relative w-48 h-48 mb-4 stack" id="stack-4">
+                    <img src="https://images.pexels.com/photos/34060969/pexels-photo-34060969.jpeg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                    <img src="https://images.pexels.com/photos/259269/pexels-photo-259269.jpeg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                    <img src="https://images.pexels.com/photos/1535437/pexels-photo-1535437.jpeg" class="rounded-xl shadow-lg object-cover w-full h-full" loading="lazy">
+                </div>
+                <h2 class="text-lg font-bold mb-2">Education</h2>
+                <p class="text-sm text-black-300 mb-4">Children on an adventure.</p>
+                <div class="flex space-x-4">
+                    <button onclick="prevStack(4)" class="p-2 bg-red-400 rounded-full hover:bg-blue-400">&larr;</button>
+                    <button onclick="nextStack(4)" class="p-2 bg-red-400 rounded-full hover:bg-blue-400">&rarr;</button>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</section>
+
+
+<script>
+    function nextStack(stackId) {
+      const stack = document.getElementById(`stack-${stackId}`);
+      const imgs = stack.querySelectorAll("img");
+      stack.appendChild(imgs[0]); // move first to end
+    }
+
+    function prevStack(stackId) {
+      const stack = document.getElementById(`stack-${stackId}`);
+      const imgs = stack.querySelectorAll("img");
+      stack.insertBefore(imgs[imgs.length - 1], imgs[0]); // move last to front
+    }
+</script>

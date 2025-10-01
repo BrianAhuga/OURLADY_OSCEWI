@@ -1,0 +1,95 @@
+﻿@page "/Vacancies"
+@model OurLadyPS.Web.Pages.VacanciesModel
+@{
+    ViewData["Title"] = "Vacancies";
+}
+
+
+
+<!-- Page Title -->
+<div class="page-title dark-background" style="background-image: url(assets/img/education/showcase-1.webp);">
+    <div class="container position-relative">
+        <h1>Job Application</h1>
+        <p>
+            At Ourlady Parents’ School we are always in need of Highly experienced and talented teachers needed to teach English, Mathematics, Science, Global Perspectives, Humanities and Personal Social Health Education.
+        </p>
+
+        <nav class="breadcrumbs">
+            <ol>
+                <li><a href="Index">Home</a></li>
+                <li class="current">Vacancies</li>
+            </ol>
+        </nav>
+    </div>
+</div><!-- End Page Title -->
+
+
+<section id="starter-section" class="starter-section section">
+
+    <div class="container" data-aos="fade-up">
+        <h3>How to Apply</h3>
+        <p>
+            Please send your cover letter, resume, recent passport size photo, national ID/passport,
+            academic credentials and contact of three professional referees to the head teacher on
+            <a href="mailto:info@ourladyps.org">info@ourladyps.org</a> indicating clearly the job position(s) you are applying for in the email subject. Or Fill the form below.
+        </p>
+        <br />
+
+        <h3>Job Application Form</h3>
+        <hr />
+        <form class="row g-3 mt-2">
+            <div class="col-md-6">
+                <label for="inputFullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="inputFullName" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputEmail" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="inputEmail" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputPhoneNumber" class="form-label">Phone Number</label>
+                <input type="number" class="form-control" id="inputPhoneNumber" min="10" max="12" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputPosition" class="form-label">Position Applying for</label>
+                <input type="text" class="form-control" id="inputPosition" required>
+            </div>
+
+            <div class="col-md-3">
+                <label for="coverletter" class="form-label">Cover Letter</label>
+                <input class="form-control" type="file" id="coverletter" accept=".pdf, .doc, .docx">
+            </div>
+
+            <div class="col-md-3">
+                <label for="cv" class="form-label">CV & References</label>
+                <input class="form-control" type="file" id="cv" accept=".pdf, .doc, .docx">
+            </div>
+
+            <div class="col-md-3">
+                <label for="idpassport" class="form-label">ID/Passport</label>
+                <input class="form-control" type="file" id="idpassport" accept="jpg, png, jpeg">
+            </div>
+
+            <div class="col-md-3">
+                <label for="academicdocs" class="form-label">Academic Documents</label>
+                <input class="form-control" type="file" id="academicdocs" accept=".pdf, .doc, .docx">
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputPosition" class="form-label">
+                    Tell us about yourself and the job you are interested in. 
+                </label>
+                <textarea class="form-control" id="childrenText" rows="5" placeholder="Enter details here..."></textarea>
+            </div>
+           
+            <div class="col-12">
+                <button type="submit" class="btn btn-danger">Submit Form</button>
+            </div>
+        </form>
+    </div>
+
+</section>
+

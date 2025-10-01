@@ -1,0 +1,321 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    /* Hover animation */
+    .calendar-frame:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Iframe itself */
+    .calendar-frame iframe {
+        border-radius: 16px;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<!-- Hero Section -->
+<section id="hero" class="hero section dark-background">
+
+    <div class="hero-container">
+        <video autoplay="" muted="" loop="" playsinline="" class="video-background">
+            <source src="assets/img/Media Player 2025-08-04 17-08-25 (online-video-cutter.com).mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="zoom-out" data-aos-delay="100">
+                    <div class="hero-content">
+                        <h1>Welcome to OurLady Parents' School</h1>
+                        <p>
+                            At Our Lady Parents’ School, we believe that every child carries within them the potential to become a
+                            leader, a problem-solver, and a compassionate citizen of the world.
+                        </p>
+
+                        <p>
+                            Located in the heart of Luweero District, Kasoma Zone - Uganda, our school is a vibrant learning
+                            community where over 600 pupils are guided by a dedicated team of 20+ professional teachers and 7+
+                            support staff. We welcome children from all cultures, backgrounds, and beliefs, fostering an
+                            environment of respect, inclusivity, and unity.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
+                    <div class="stats-card">
+                        <div class="stats-header">
+                            <h3>Why Choose Us</h3>
+                            <div class="decoration-line"></div>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="bi bi-award"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h4>Quality Education</h4>
+                                    <p>Experienced teachers blend national curriculum with creative problem-solving.</p>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="bi bi-stars"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h4>Holistic Development</h4>
+                                    <p>Emphasis on sports, culture, leadership, and community service.</p>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h4>Safe & Supportive Environment</h4>
+                                    <p>Comfortable, secure classrooms and facilities.</p>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="bi bi-shield-lock"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h4>Strong Values</h4>
+                                    <p>Core focus on honesty, discipline, determination, and teamwork</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="event-ticker">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-6 col-xl-4 col-12 ticker-item">
+                    <span class="date">DISCIPLINE </span>
+                    <span class="title">Foundation of Lifelong Success</span>
+                </div>
+                <div class="col-md-6 col-12 col-xl-4  ticker-item">
+                    <span class="date">RESPECT</span>
+                    <span class="title">Every Child, Every Culture</span>
+                </div>
+                <div class="col-md-6 col-12 col-xl-4 ticker-item">
+                    <span class="date">DETERMINATION</span>
+                    <span class="title">Striving for Excellence</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section><!-- /Hero Section -->
+<!-- About Section -->
+<section id="about" class="about section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row mb-5">
+            <div class="col-lg-6 pe-lg-5" data-aos="fade-right" data-aos-delay="200">
+                <h2 class="display-6 fw-bold mb-4">To Educate and <span>Train for Nations.</span></h2>
+                <p class="lead mb-4">
+                    Our school is more than a place of learning, it is a community. Pupils from diverse backgrounds come together to share ideas, discover talents,
+                    and build lifelong friendships. Through sports, cultural events, music, and clubs, learners develop teamwork, leadership skills, and confidence.
+                    Parents are active partners in the education process, ensuring that every child receives the guidance and encouragement they need both at school and at home.
+                    Together, we are shaping young minds with knowledge, character, and determination for a brighter tomorrow.
+                </p>
+                <div class="d-flex flex-wrap gap-4 mb-4">
+                    <div class="stat-box">
+                        <span class="stat-number">
+                            <span data-purecounter-start="0" data-purecounter-end="20"
+                                  data-purecounter-duration="1" class="purecounter"></span>+
+                        </span>
+                        <span class="stat-label">Years</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">
+                            <span data-purecounter-start="0" data-purecounter-end="20000"
+                                  data-purecounter-duration="1" class="purecounter"></span>+
+                        </span>
+                        <span class="stat-label">Students</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">
+                            <span data-purecounter-start="0" data-purecounter-end="20"
+                                  data-purecounter-duration="1" class="purecounter"></span>+
+                        </span>
+                        <span class="stat-label">Teachers</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mt-4 signature-block">
+                    <img src="assets/img/sandra.jpeg" alt="Principal's Signature" width="120">
+                    <div class="ms-3">
+                        <p class="mb-0 fw-bold">Ms. Sandra Zawedde</p>
+                        <p class="mb-0 text-muted">Director</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+                <div class="image-stack">
+                    <div class="image-stack-item image-stack-item-top" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="assets/img/homepage/1.jpg" alt="Campus Life" class="img-fluid rounded-4 shadow-lg">
+                    </div>
+                    <div class="image-stack-item image-stack-item-bottom" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="assets/img/homepage/2.jpg" alt="Students" class="img-fluid rounded-4 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mission-vision-row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="value-card h-100">
+                    <div class="card-icon">
+                        <i class="bi bi-rocket-takeoff"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>
+                        To provide quality education that nurtures knowledge, character, and determination, preparing every learner to contribute positively to their community and beyond.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="value-card h-100">
+                    <div class="card-icon">
+                        <i class="bi bi-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>A nurturing and disciplined school that produces confident, well-rounded learners ready to excel in academics and life.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="value-card h-100">
+                    <div class="card-icon">
+                        <i class="bi bi-quote"></i>
+                    </div>
+                    <h3>Our Motto</h3>
+                    <p>
+                        Shaping Young Minds, Building Bright Futures.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- /About Section -->
+
+<!-- Students Life Block Section -->
+<section id="students-life-block" class="students-life-block section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Pupils Life</h2>
+        <p>
+            Discover Student Life at Our Lady Parents’ School, where learning, creativity, and growth go hand in hand.
+            From clubs and sports to arts and global experiences, every day is full of opportunities for students to explore, connect, and thrive.
+        </p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row align-items-center gy-4">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+                <div class="students-life-img position-relative">
+                    <img src="assets/img/12.jpg" class="img-fluid rounded-4 shadow-sm" alt="Pupils Life">
+                    <br />
+                    <br />
+                    <img src="assets/img/16.jpg" class="img-fluid rounded-4 shadow-sm" alt="Pupils Life">
+                </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+                <div class="students-life-content">
+
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="student-activity-item">
+                                <div class="icon-box">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <h4>Clubs</h4>
+                                <p>
+                                    Students develop leadership, teamwork, and creativity through clubs like Scouts, Debate, and Reading & Literature, participating in projects and competitions.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="student-activity-item">
+                                <div class="icon-box">
+                                    <i class="bi bi-trophy"></i>
+                                </div>
+                                <h4>Sports Events</h4>
+                                <p>
+                                    Physical activity is central to student life. Pupils enjoy football, netball, athletics,
+                                    inter-house competitions, and fun sports days that promote teamwork, confidence, and healthy living.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="student-activity-item">
+                                <div class="icon-box">
+                                    <i class="bi bi-music-note-beamed"></i>
+                                </div>
+                                <h4>Arts &amp; Culture</h4>
+                                <p>
+                                    Students express creativity through music, choir, dance, and crafts.
+                                    Cultural festivals celebrate local traditions and global diversity, nurturing imagination and self-expression.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="500">
+                            <div class="student-activity-item">
+                                <div class="icon-box">
+                                    <i class="bi bi-globe-americas"></i>
+                                </div>
+                                <h4>Global Experiences</h4>
+                                <p>
+                                    We broaden students’ horizons through educational trips, exchange programs, community service,
+                                    and awareness campaigns. These experiences foster empathy, social responsibility, and global awareness.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="students-life-cta" data-aos="fade-up" data-aos-delay="600">
+                        <a href="Support" class="btn btn-primary"><i class="bi bi-peace"></i> Support Our School</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section><!-- /Students Life Block Section -->
+
+<!-- Events Section -->
+<section id="events" class="events section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Events</h2>
+        <p>
+            Discover impactful moments that shape our journey — from academic milestones to inspiring community outreach.
+            Every event is an opportunity to connect, celebrate, and grow together.
+        </p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4">
+            <iframe src="https://calendar.google.com/calendar/embed?src=ourladyps%40gmail.com&ctz=Africa%2FNairobi" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+
+</section><!-- /Events Section -->
