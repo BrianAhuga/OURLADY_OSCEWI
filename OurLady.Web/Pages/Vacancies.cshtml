@@ -5,7 +5,36 @@
 }
 
 <!-- SweetAlert2 CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if (TempData["Success"] != null)
+{
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            Swal.fire({
+                icon: 'success',
+                title: 'Application Submitted!',
+                text: '@TempData["Success"]',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+            });
+        });
+    </script>
+}
+
+@if (TempData["Error"] != null)
+{
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Oops...',
+                text: '@TempData["Error"]',
+                confirmButtonText: 'OK'
+            });
+        });
+    </script>
+}
 
 <!-- Page Title -->
 <div class="page-title dark-background" style="background-image: url(assets/img/education/showcase-1.webp);">
@@ -64,29 +93,29 @@
 
             <div class="col-md-3">
                 <label for="CoverLetter" class="form-label">Cover Letter</label>
-                <input class="form-control" type="file" id="CoverLetter" name="CoverLetter" accept=".pdf,.doc,.docx">
+                <input class="form-control" type="file" id="CoverLetter" name="CoverLetter" accept=".pdf,.doc,.docx" required>
             </div>
 
             <div class="col-md-3">
                 <label for="CV" class="form-label">CV & References</label>
-                <input class="form-control" type="file" id="CV" name="CV" accept=".pdf,.doc,.docx">
+                <input class="form-control" type="file" id="CV" name="CV" accept=".pdf,.doc,.docx" required>
             </div>
 
             <div class="col-md-3">
                 <label for="IDPassport" class="form-label">ID/Passport</label>
-                <input class="form-control" type="file" id="IDPassport" name="IDPassport" accept=".jpg,.jpeg,.png">
+                <input class="form-control" type="file" id="IDPassport" name="IDPassport" accept=".jpg,.jpeg,.png" required>
             </div>
 
             <div class="col-md-3">
                 <label for="AcademicDocs" class="form-label">Academic Documents</label>
-                <input class="form-control" type="file" id="AcademicDocs" name="AcademicDocs" accept=".pdf,.doc,.docx">
+                <input class="form-control" type="file" id="AcademicDocs" name="AcademicDocs" accept=".pdf,.doc,.docx" required>
             </div>
 
             <div class="col-md-12">
                 <label for="About" class="form-label">
                     Tell us about yourself and the job you are interested in.
                 </label>
-                <textarea class="form-control" id="About" name="About" rows="5" placeholder="Enter details here..."></textarea>
+                <textarea class="form-control" id="About" name="About" rows="5" placeholder="Enter details here..." required></textarea>
             </div>
 
             <div class="col-12">

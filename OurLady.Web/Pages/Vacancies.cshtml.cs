@@ -52,16 +52,20 @@ namespace OurLadyPS.Web.Pages
                 AcademicDocsFileName = Application.AcademicDocs?.FileName
             };
 
+
             var result = await _jobApplicationService.SaveJobApplicationAsync(jobApp);
 
-            if (result)
+            if (result.Success)
             {
-                TempData["Success"] = "Your application has been submitted successfully!";
-                return RedirectToPage("Success");
+                TempData["Success"] = result.Message;
+                return RedirectToPage();
+            }
+            else
+            {
+                TempData["Error"] = result.Message;
+                return Page();
             }
 
-            TempData["Error"] = "There was an error submitting your application. Please try again.";
-            return Page();
         }
     }
 }

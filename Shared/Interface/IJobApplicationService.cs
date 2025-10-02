@@ -9,6 +9,6 @@ namespace Shared.Interface
 {
     public interface IJobApplicationService
     {
-        Task<bool> SaveJobApplicationAsync(JobApplication jobApplication);
+        Task<(bool Success, string Message)> SaveJobApplicationAsync(JobApplication jobApplication);
     }
 }
