@@ -16,6 +16,7 @@ namespace APIServices
 
         public DbSet<User> Users { get; set; }
         public DbSet<JobApplication> JobApplications { get; set; }
+        public DbSet<PupilEnrollment> PupilEnrollments { get; set; }
 
     }
 }

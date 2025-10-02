@@ -11,7 +11,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<MailService>();
 builder.Services.AddScoped<IJobApplicationService, JobApplicationService>();
-
+builder.Services.AddScoped<IPupilEnrollmentService, PupilEnrollmentService>();
 
 
 var app = builder.Build();
