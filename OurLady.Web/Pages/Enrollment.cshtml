@@ -73,7 +73,7 @@
 
             <div class="col-md-6">
                 <label asp-for="Enrollment.FormerSchool" class="form-label">Former School</label>
-                <input asp-for="Enrollment.FormerSchool" class="form-control" required/>
+                <input asp-for="Enrollment.FormerSchool" class="form-control" required placeholder="If none write [None]"/>
             </div>
 
             <div class="col-md-6">
@@ -88,7 +88,7 @@
 
             <div class="col-md-3">
                 <label asp-for="Enrollment.ParentPhone" class="form-label">Phone Number</label>
-                <input asp-for="Enrollment.ParentPhone" type="tel" class="form-control" pattern="[0-9+]{10,15}" required />
+                <input asp-for="Enrollment.ParentPhone" type="number" min="10" max="12" class="form-control" required />
             </div>
 
             <div class="col-md-6">
