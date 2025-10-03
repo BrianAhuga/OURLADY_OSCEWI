@@ -22,11 +22,6 @@ namespace OurLadyPS.Web.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             var (success, message) = await _enrollmentService.SavePupilEnrollmentAsync(Enrollment);
 
             TempData["Success"] = success;

@@ -73,17 +73,17 @@
 
             <div class="col-md-6">
                 <label asp-for="Enrollment.FormerSchool" class="form-label">Former School</label>
-                <input asp-for="Enrollment.FormerSchool" class="form-control" />
+                <input asp-for="Enrollment.FormerSchool" class="form-control" required/>
             </div>
 
             <div class="col-md-6">
                 <label asp-for="Enrollment.ParentGuardian" class="form-label">Parent/Guardian</label>
-                <input asp-for="Enrollment.ParentGuardian" class="form-control" required />
+                <input asp-for="Enrollment.ParentGuardian" class="form-control" required/>
             </div>
 
             <div class="col-md-3">
                 <label asp-for="Enrollment.ParentEmail" class="form-label">Email</label>
-                <input asp-for="Enrollment.ParentEmail" type="email" class="form-control" />
+                <input asp-for="Enrollment.ParentEmail" type="email" class="form-control" required/>
             </div>
 
             <div class="col-md-3">
@@ -93,22 +93,22 @@
 
             <div class="col-md-6">
                 <label asp-for="Enrollment.Address" class="form-label">Address</label>
-                <input asp-for="Enrollment.Address" class="form-control" />
+                <input asp-for="Enrollment.Address" class="form-control" required/>
             </div>
 
             <div class="col-md-4">
                 <label asp-for="Enrollment.AddressLine1" class="form-label">Address Line 1</label>
-                <input asp-for="Enrollment.AddressLine1" class="form-control" placeholder="City" />
+                <input asp-for="Enrollment.AddressLine1" class="form-control" placeholder="City" required/>
             </div>
 
             <div class="col-md-4">
                 <label asp-for="Enrollment.AddressLine2" class="form-label">Address Line 2</label>
-                <input asp-for="Enrollment.AddressLine2" class="form-control" placeholder="State/Province/Region" />
+                <input asp-for="Enrollment.AddressLine2" class="form-control" placeholder="State/Province/Region" required/>
             </div>
 
             <div class="col-md-4">
                 <label asp-for="Enrollment.Country" class="form-label">Country</label>
-                <select asp-for="Enrollment.Country" class="form-control">
+                <select asp-for="Enrollment.Country" class="form-control" required>
                     <option value="">-- Select Country --</option>
                     <option value="uganda" selected="@(Model.Enrollment?.Country == "uganda")">Uganda</option>
                     <option value="kenya" selected="@(Model.Enrollment?.Country == "kenya")">Kenya</option>
@@ -136,13 +136,16 @@
                 </div>
             </div>
 
-            <br />
-            <div class="col-3">
-                <button type="submit" class="btn btn-danger w-100" id="submitBtn">
-                    <span id="btnText">Submit Enrollment</span>
-                    <span id="spinner" class="spinner-border spinner-border-sm d-none"></span>
-                </button>
+            <div class="row mt-4">
+                <div class="col-4">
+                    <button type="submit" class="btn btn-danger" id="submitBtn">
+                        <span id="btnText">Submit</span>
+                        <span id="spinner" class="spinner-border spinner-border-sm d-none"></span>
+                    </button>
+                </div>
             </div>
+
+            
         </form>
     </div>
 
@@ -176,7 +179,8 @@
                 <text>
                     Swal.fire({
                         icon: '@(TempData["Success"] != null && (bool)TempData["Success"] ? "success" : "error")',
-                        title: '@TempData["Message"]',
+                        title: '@(TempData["Success"] != null && (bool)TempData["Success"] ? "Success!" : "Failed!")',
+                        text: '@TempData["Message"]',
                         confirmButtonColor: "#dc3545"
                     });
                 </text>

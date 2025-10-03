@@ -25,13 +25,15 @@ namespace APIServices
                 var existingEnrollment = await _context.PupilEnrollments
                     .FirstOrDefaultAsync(e => e.ParentEmail == enrollment.ParentEmail
                                            && e.FirstName == enrollment.FirstName
-                                           && e.LastName == enrollment.LastName
-                                           && e.DateOfBirth == enrollment.DateOfBirth);
+                                           && e.LastName == enrollment.LastName);
 
                 if (existingEnrollment != null)
                 {
                     return (false, "We already received an enrollment for this pupil. Please wait for a response.");
                 }
+
+                if (enrollment.HasOtherChildren == false)
+                    enrollment.OtherChildrenDetails = "None";
 
                 _context.PupilEnrollments.Add(enrollment);
                 await _context.SaveChangesAsync();
